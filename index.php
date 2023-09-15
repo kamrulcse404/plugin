@@ -17,10 +17,10 @@ include('ajax-actions.php');
 add_action('wp_enqueue_scripts','plugin_css_jsscripts');
 function plugin_css_jsscripts() {
     // CSS
-    wp_enqueue_style( 'style-css', plugins_url( '/style.css', _FILE_ ));
+    wp_enqueue_style( 'style-css', plugins_url( '/assets/css/style.css', __FILE__ ));
 
     // JavaScript
-    wp_enqueue_script( 'script-js', plugins_url( '/script.js', _FILE_ ),array('jquery'));
+    wp_enqueue_script( 'script-js', plugins_url( '/assets/js/script.js', __FILE__ ),array('jquery'));
 
     // Pass ajax_url to script.js
     wp_localize_script( 'script-js', 'plugin_ajax_object',
@@ -57,7 +57,3 @@ add_action( 'admin_menu', 'wc_order_data_table_page' );
 function pathao_shipment_settings(){
    include 'settings.php';
 }
-
-
-
-?>
